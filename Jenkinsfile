@@ -16,7 +16,7 @@ pipeline {
 
         stage('CHECKOUT CODE') {
             steps {
-                git branch: 'main', url: 'https://github.com/Praveeen1996/devops-automation.git'
+                git 'https://github.com/Praveeen1996/myweb.git'
             }
         }
         stage('BUILD-TOOL') {
