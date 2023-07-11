@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: myweb
-        image: kammana/myweb:"$(version)"
+        image: praveenhema/myweb
         ports:
         - containerPort: 8080
