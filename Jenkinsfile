@@ -26,7 +26,7 @@ pipeline {
         }
         stage('DOCKER BUILD'){
             steps{
-                sh "docker build . -t praveenhema/devops-integration:${DOCKER_TAG} "
+                sh "docker build . -t praveenhema/myweb:${DOCKER_TAG} "
             }
         }
         stage('DOCKERHUB PUSH'){
@@ -35,7 +35,7 @@ pipeline {
                     sh "docker login -u praveenhema -p ${dockerHubPwd}"
                 }
                 
-                sh "docker push praveenhema/devops-integration:${DOCKER_TAG} "
+                sh "docker push praveenhema/myweb:${DOCKER_TAG} "
             }
         }
         
