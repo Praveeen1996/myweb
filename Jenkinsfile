@@ -38,7 +38,13 @@ pipeline {
                 sh "docker push praveenhema/myweb:${DOCKER_TAG} "
             }
         }
-        
+       stage('Deploy To K8S'){
+            steps{
+                script{
+                    kubernetesDeploy (configs: 'deployments.yaml',kubeconfigId: 'k8configpwd')
+                }
+            }
+        }  
     }
 }
 def getVersion(){
